@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Grid, Button } from "@material-ui/core";
+import Project from "./components/Project";
+import Student from "./components/Student";
+import EmailSender from "./components/EmailSender"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Grid container spacing={2}>
+        <Grid item sm={6}>
+          {" "}
+          <Project />
+        </Grid>
+        <Grid item sm={6}>
+          {" "}
+          <Student />
+        </Grid>
+      </Grid>
+      <div>
+        <Grid container justify="center">
+          <Button color="primary" variant="contained">
+            EMAIL PDF
+          </Button>
+        </Grid>
+      </div>
     </div>
   );
 }
